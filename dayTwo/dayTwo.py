@@ -5,7 +5,7 @@ start = time.time()
 file = open("passwords.txt", "r")
 passwordsList = []
 for i in file:
-    i = i.strip('\n').split()
+    i = i.strip().split()
     i[0], i[1] = i[0].split('-'), i[1].strip(':')
     passwordsList.append(i)
 
