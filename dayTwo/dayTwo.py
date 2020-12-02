@@ -28,14 +28,10 @@ def partTwo(passwordsList):
     correctCounter = 0
     for i in passwordsList:
         if i[2][int(i[0][0]) - 1] == i[1]:
-            if i[2][int(i[0][1]) - 1] == i[1]:
-                pass
-            else:
+            if i[2][int(i[0][1]) - 1] != i[1]:
                 correctCounter += 1
         elif i[2][int(i[0][1]) - 1] == i[1]:
-            if i[2][int(i[0][0]) - 1] == i[1]:
-                pass
-            else:
+            if i[2][int(i[0][0]) - 1] != i[1]:
                 correctCounter += 1
     return correctCounter
 
