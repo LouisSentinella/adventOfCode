@@ -1,3 +1,7 @@
+import time
+
+start = time.time()
+
 file = open("passwords.txt", "r")
 passwordsList = []
 for i in file:
@@ -38,3 +42,5 @@ def partTwo(passwordsList):
 
 print(partOne(passwordsList))
 print(partTwo(passwordsList))
+
+print(str(round(time.time() - start, 5)) + " seconds")
