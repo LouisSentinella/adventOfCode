@@ -13,7 +13,11 @@ for i in file:
 def partOne(passwordsList):
     correctCounter = 0
     for i in passwordsList:
-        counter = len([letter for letter in i[2] if letter == i[1]])
+        #counter = len([letter for letter in i[2] if letter == i[1]])
+        counter = 0
+        for letter in i[2]:
+            if letter == i[1]:
+                counter += 1
         if int(i[0][0]) <= counter <= int(i[0][1]):
             correctCounter += 1
     return correctCounter
