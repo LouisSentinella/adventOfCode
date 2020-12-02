@@ -37,3 +37,5 @@ print(partOne(passwordsList))
 print(partTwo(passwordsList))
 
 print(str(round(time.time() - start, 5)) + " seconds")
+
+file.close()
