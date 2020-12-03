@@ -5,7 +5,7 @@ start = time.time()
 file = open("numbers.txt", "r")
 numbersList = []
 for i in file:
-    numbersList.append(i.strip('\n'))
+    numbersList.append(i.strip())
 
 
 def partOne(numbersList):
