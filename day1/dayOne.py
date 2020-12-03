@@ -3,9 +3,8 @@ import time
 start = time.time()
 
 file = open("numbers.txt", "r")
-numbersList = []
-for i in file:
-    numbersList.append(int(i.strip()))
+
+numbersList = [int(i.strip()) for i in file]
 
 
 def twoLines(numbersList):

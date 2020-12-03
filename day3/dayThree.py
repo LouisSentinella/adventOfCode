@@ -3,31 +3,16 @@ import time
 start = time.time()
 
 file = open("slope.txt", "r")
-currentLocation = (0, 0)
-slopeMap = []
 
-for line in file:
-    line = line.strip()
-    slopeMap.append([location for location in line])
-
+slopeMap = [[location for location in line.strip()] for line in file]
 
 def tree_counter(xInc, yInc, slopeMap):
-    finished = False
-    y = 0
-    x = 0
+    x, y = 0,0
     treeCounter = 0
-    while not finished:
-        if y == len(slopeMap) - 1:
-            finished = True
-        else:
-            x, y = x + xInc, y + yInc
-            if x > len(slopeMap[0]) - 1:
-                x -= len(slopeMap[0])
-            if y > len(slopeMap):
-                y -= len(slopeMap)
-            if slopeMap[y][x] == '#':
-                treeCounter += 1
-
+    while y < len(slopeMap) - 1:
+        x, y = (x + xInc) % len(slopeMap[0]), y + yInc
+        if slopeMap[y][x] == '#':
+            treeCounter += 1
     return treeCounter
 
 
@@ -42,6 +27,6 @@ def part_two(slopeMap):
 print(part_one(slopeMap))
 print(part_two(slopeMap))
 
-print(str(round(time.time() - start, 5)) + " seconds")
+print(str(round(time.time() - start, 8)) + " seconds")
 
 file.close()
