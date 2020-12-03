@@ -5,26 +5,35 @@ start = time.time()
 file = open("numbers.txt", "r")
 numbersList = []
 for i in file:
-    numbersList.append(i.strip())
+    numbersList.append(int(i.strip()))
+
+
+def twoLines(numbersList):
+    print(([i * j for i in numbersList for j in numbersList if i + j == 2020][0]))
+    print([i * j * k for i in numbersList for j in numbersList for k in numbersList if i + j + k == 2020][0])
 
 
 def partOne(numbersList):
+    # return ([i * j for i in numbersList for j in numbersList if i + j == 2020][0])
     for i in numbersList:
         for j in numbersList:
-            if int(i) + int(j) == 2020:
-                return int(i) * int(j)
+            if i + j == 2020:
+                return i * j
 
 
 def partTwo(numbersList):
+    # return ([i * j * k for i in numbersList for j in numbersList for k in numbersList if i + j + k == 2020][0])
     for i in numbersList:
         for j in numbersList:
             for k in numbersList:
-                if int(i) + int(j) + int(k) == 2020:
-                    return int(i) * int(j) * int(k)
+                if i + j + k == 2020:
+                    return i * j * k
 
 
 print(partOne(numbersList))
 print(partTwo(numbersList))
+
+# twoLines(numbersList)
 
 print(str(round(time.time() - start, 5)) + " seconds")
 
