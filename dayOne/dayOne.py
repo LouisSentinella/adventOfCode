@@ -26,4 +26,6 @@ def partTwo(numbersList):
 print(partOne(numbersList))
 print(partTwo(numbersList))
 
-print(time.time() - start)
+print(str(round(time.time() - start, 5)) + " seconds")
+
+file.close()
