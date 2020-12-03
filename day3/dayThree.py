@@ -11,7 +11,7 @@ for line in file:
     slopeMap.append([location for location in line])
 
 
-def treeCounter(xInc, yInc, slopeMap):
+def tree_counter(xInc, yInc, slopeMap):
     finished = False
     y = 0
     x = 0
@@ -31,16 +31,16 @@ def treeCounter(xInc, yInc, slopeMap):
     return treeCounter
 
 
-def partOne(slopeMap):
-    return treeCounter(3, 1, slopeMap)
+def part_one(slopeMap):
+    return tree_counter(3, 1, slopeMap)
 
 
-def partTwo(slopeMap):
-    return treeCounter(1, 1, slopeMap) * treeCounter(3, 1, slopeMap) * treeCounter(5, 1, slopeMap) * treeCounter(7, 1, slopeMap) * treeCounter(1, 2, slopeMap)
+def part_two(slopeMap):
+    return tree_counter(1, 1, slopeMap) * tree_counter(3, 1, slopeMap) * tree_counter(5, 1, slopeMap) * tree_counter(7, 1, slopeMap) * tree_counter(1, 2, slopeMap)
 
 
-print(partOne(slopeMap))
-print(partTwo(slopeMap))
+print(part_one(slopeMap))
+print(part_two(slopeMap))
 
 print(str(round(time.time() - start, 5)) + " seconds")
 
