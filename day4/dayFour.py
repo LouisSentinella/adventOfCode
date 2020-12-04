@@ -1,3 +1,7 @@
+import time
+
+start = time.time()
+
 file = open("passports.txt", "r")
 
 
@@ -8,6 +12,7 @@ def isValidOne(passportRowList):
             return False
 
     return True
+
 
 def isValidTwo(passportRowList):
     if not isValidOne(passportRowList):
@@ -67,6 +72,7 @@ def isValidTwo(passportRowList):
 
     return True
 
+
 passportList = []
 passportRow = []
 for line in file:
@@ -79,32 +85,28 @@ for line in file:
         passportRow = []
 passportList.append(passportRow)
 
-def partOne(passportList):
 
+def partOne(passportList):
     counter = 0
     for i in passportList:
         if isValidOne(i):
-           counter += 1
+            counter += 1
 
     print(counter)
 
-def partTwo(passportList):
 
+def partTwo(passportList):
     counter = 0
     for i in passportList:
         if isValidTwo(i):
-           counter += 1
+            counter += 1
 
     print(counter)
-
 
 
 partOne(passportList)
 partTwo(passportList)
 
+print(str(round(time.time() - start, 8)) + " seconds")
 
-
-
-
-
-
+file.close()
