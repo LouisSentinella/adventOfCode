@@ -8,8 +8,8 @@ numbersList = [int(i.strip()) for i in file]
 
 
 def twoLines(numbersList):
-    print(([i * j for i in numbersList for j in numbersList if i + j == 2020][0]))
-    print([i * j * k for i in numbersList for j in numbersList for k in numbersList if i + j + k == 2020][0])
+    print(next(i * j for i in numbersList for j in numbersList if i + j == 2020))
+    print(next(i * j * k for i in numbersList for j in numbersList for k in numbersList if i + j + k == 2020))
 
 
 def partOne(numbersList):
@@ -32,7 +32,7 @@ def partTwo(numbersList):
 print(partOne(numbersList))
 print(partTwo(numbersList))
 
-# twoLines(numbersList)
+#twoLines(numbersList)
 
 print(str(round(time.time() - start, 5)) + " seconds")
 

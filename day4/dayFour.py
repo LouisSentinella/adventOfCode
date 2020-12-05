@@ -2,7 +2,7 @@ import time
 
 start = time.time()
 
-file = open("passports.txt", "r")
+file = open("passportsJphn.txt", "r")
 
 
 def isValidOne(passportRowList):
@@ -78,8 +78,7 @@ passportRow = []
 for line in file:
     if line != '\n':
         for j in line.strip().split():
-            jsplit = j.split(':')
-            passportRow.append([jsplit[0], jsplit[1]])
+            passportRow.append(j.split(':'))
     else:
         passportList.append(passportRow)
         passportRow = []
