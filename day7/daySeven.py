@@ -1,3 +1,4 @@
+
 with open("bags.txt", "r") as file:
     dataStructure = {(k.strip().split()[0] + k.strip().split()[1]): ([j.strip().replace(",", "").replace(".", "") for j in k.strip().split()[4::]]) for k in file}
 
@@ -25,10 +26,8 @@ def find_those_bad_boys(name):
         return 0
     for j in [i + 1 for i in range(0, len(dataStructure[name])) if i % 4 == 0]:
         deeper_count = find_those_bad_boys(dataStructure[name][j] + dataStructure[name][j + 1])
-        if deeper_count == 0:
-            count += int(dataStructure[name][j - 1])
-        else:
-            count += int(dataStructure[name][j - 1])
+        count += int(dataStructure[name][j - 1])
+        if deeper_count != 0:
             count += deeper_count * int(dataStructure[name][j - 1])
     return count
 
