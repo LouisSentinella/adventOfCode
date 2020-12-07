@@ -1,3 +1,7 @@
+import time
+
+start = time.time()
+
 with open("bags.txt", "r") as file:
     dataStructure = {(k.strip().split()[0] + k.strip().split()[1]): ([j.strip().replace(",", "").replace(".", "") for j in k.strip().split()[4::]]) for k in file}
 
@@ -34,3 +38,5 @@ def find_those_bad_boys(name):
 
 
 print(find_those_bad_boys("shinygold"))
+
+print(str(round(time.time() - start, 8)) + " seconds")
