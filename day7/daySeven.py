@@ -1,6 +1,5 @@
 with open("bags.txt", "r") as file:
-    dataStructure = {(k.strip().split()[0] + k.strip().split()[1]): (
-        [j.strip().replace(",", "").replace(".", "") for j in k.strip().split()[4::]]) for k in file}
+    dataStructure = {(k.strip().split()[0] + k.strip().split()[1]): ([j.strip().replace(",", "").replace(".", "") for j in k.strip().split()[4::]]) for k in file}
 
 
 def is_gold_deep(name):
