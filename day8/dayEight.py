@@ -26,7 +26,7 @@ def runCode(accumulator, instructionsList):
 
 
 # Part One
-print(runCode(0, deepcopy(instructionsList)))
+print(runCode(0, deepcopy(instructionsList))[0])
 
 # Part Two
 njSwap = {"nop": "jmp", "jmp": "nop"}
