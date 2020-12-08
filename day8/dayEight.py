@@ -31,7 +31,7 @@ print(runCode(0, deepcopy(instructionsList))[0])
 # Part Two
 njSwap = {"nop": "jmp", "jmp": "nop"}
 for j in range(0, len(instructionsList)):
-    if instructionsList[j][0] in njSwap:
+    if instructionsList[j][0] in njSwap and instructionsList[j][1] != "+0":
         instructionsToTest = deepcopy(instructionsList)
         instructionsToTest[j][0] = njSwap[instructionsToTest[j][0]]
         accum, isFound = runCode(0, instructionsToTest)
