@@ -29,17 +29,11 @@ def runCode(accumulator, instructionsList):
 print(runCode(0, deepcopy(instructionsList)))
 
 # Part Two
+njSwap = {"nop": "jmp", "jmp": "nop"}
 for j in range(0, len(instructionsList)):
-    if instructionsList[j][0] == "nop":
+    if instructionsList[j][0] in njSwap:
         instructionsToTest = deepcopy(instructionsList)
-        instructionsToTest[j][0] = "jmp"
-        accum, isFound = runCode(0, instructionsToTest)
-        if isFound:
-            print(accum)
-            break
-    elif instructionsList[j][0] == "jmp":
-        instructionsToTest = deepcopy(instructionsList)
-        instructionsToTest[j][0] = "nop"
+        instructionsToTest[j][0] = njSwap[instructionsToTest[j][0]]
         accum, isFound = runCode(0, instructionsToTest)
         if isFound:
             print(accum)
